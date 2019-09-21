@@ -10,12 +10,20 @@ Widget::Widget(QWidget *parent) :
 
     // Call ViewSignal
     ViewSignal();
+
+    // Connect signal and slot
+    connect(ui->testButton, SIGNAL(clicked()), this, SLOT(TestSlot()));
 }
 
 // Add slot function
 void Widget::ViewSlot(){
     std::cout << "ViewSlot" << std::endl;
 }
+
+void Widget::TestSlot(){
+    std::cout << "TestSlot" << std::endl;
+}
+
 
 Widget::~Widget()
 {

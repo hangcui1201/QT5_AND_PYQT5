@@ -23,6 +23,7 @@ signals:
 // Add slot
 public slots:
     void ViewSlot();
+    void TestSlot();
 
 
 private:

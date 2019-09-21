@@ -2,15 +2,15 @@
 
 ### Basic Demos
 
-#### /basic_demos/qmake_test  
+#### qmake_test  
 
 $ ./make.sh
 
-#### /basic_demos/qt_test  
+#### qt_test  
 
-<img src="./images/qt_test.png" width="600">
+<img src="./images/qt_test.png" width="700">
 
-#### /basic_demos/signal_test  
-<img src="./images/signal_test.png" width="400" >
+#### signal_test  
+<img src="./images/signal_test.png" width="300" >
 
 

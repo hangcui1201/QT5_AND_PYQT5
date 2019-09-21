@@ -34,12 +34,12 @@ HEADERS += \
         form.h
 
 # Setup OpenCV Path
-INCLUDEPATH += /usr/local/lib
+INCLUDEPATH += /usr/local/include
 LIBS +=`pkg-config opencv --cflags --libs`
 
 FORMS += \
         widget.ui \
-    form.ui
+        form.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -15,7 +15,7 @@ CXX           = g++
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -I/usr/local/lib -I../../../../Qt5.11.2/5.11.2/gcc_64/include -I../../../../Qt5.11.2/5.11.2/gcc_64/include/QtWidgets -I../../../../Qt5.11.2/5.11.2/gcc_64/include/QtGui -I../../../../Qt5.11.2/5.11.2/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/linux-g++
+INCPATH       = -I. -isystem /usr/local/include -I../../../../Qt5.11.2/5.11.2/gcc_64/include -I../../../../Qt5.11.2/5.11.2/gcc_64/include/QtWidgets -I../../../../Qt5.11.2/5.11.2/gcc_64/include/QtGui -I../../../../Qt5.11.2/5.11.2/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/cui/Qt5.11.2/5.11.2/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -35,7 +35,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = qt_test1.0.0
-DISTDIR = /home/cui/Github_Repo/CPLUS_QT_PROGRAMMING/src/qt_test/.tmp/qt_test1.0.0
+DISTDIR = /home/cui/Github_Repo/QT_OPENCV/basic_demos/qt_test/.tmp/qt_test1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/home/cui/Qt5.11.2/5.11.2/gcc_64/lib
 LIBS          = $(SUBLIBS) `pkg-config opencv --cflags --libs` -L/home/cui/Qt5.11.2/5.11.2/gcc_64/lib -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
@@ -228,6 +228,7 @@ DIST          = ../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/spec_pre.prf
 		../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -431,6 +432,7 @@ Makefile: qt_test.pro ../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/linux-g++/qmake
 		../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -624,6 +626,7 @@ Makefile: qt_test.pro ../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/linux-g++/qmake
 ../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/qt_config.prf:
 ../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/toolchain.prf:
 ../../../../Qt5.11.2/5.11.2/gcc_64/mkspecs/features/default_pre.prf:
@@ -805,7 +808,7 @@ moc_widget.cpp: ../../../../Qt5.11.2/5.11.2/gcc_64/include/QtWidgets/QWidget \
 		widget.h \
 		moc_predefs.h \
 		../../../../Qt5.11.2/5.11.2/gcc_64/bin/moc
-	/home/cui/Qt5.11.2/5.11.2/gcc_64/bin/moc $(DEFINES) --include /home/cui/Github_Repo/CPLUS_QT_PROGRAMMING/src/qt_test/moc_predefs.h -I/home/cui/Qt5.11.2/5.11.2/gcc_64/mkspecs/linux-g++ -I/home/cui/Github_Repo/CPLUS_QT_PROGRAMMING/src/qt_test -I/usr/local/lib -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include/QtWidgets -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include/QtGui -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include widget.h -o moc_widget.cpp
+	/home/cui/Qt5.11.2/5.11.2/gcc_64/bin/moc $(DEFINES) --include /home/cui/Github_Repo/QT_OPENCV/basic_demos/qt_test/moc_predefs.h -I/home/cui/Qt5.11.2/5.11.2/gcc_64/mkspecs/linux-g++ -I/home/cui/Github_Repo/QT_OPENCV/basic_demos/qt_test -I/usr/local/include -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include/QtWidgets -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include/QtGui -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include widget.h -o moc_widget.cpp
 
 moc_form.cpp: ../../../../Qt5.11.2/5.11.2/gcc_64/include/QtWidgets/QWidget \
 		../../../../Qt5.11.2/5.11.2/gcc_64/include/QtWidgets/qwidget.h \
@@ -913,7 +916,7 @@ moc_form.cpp: ../../../../Qt5.11.2/5.11.2/gcc_64/include/QtWidgets/QWidget \
 		form.h \
 		moc_predefs.h \
 		../../../../Qt5.11.2/5.11.2/gcc_64/bin/moc
-	/home/cui/Qt5.11.2/5.11.2/gcc_64/bin/moc $(DEFINES) --include /home/cui/Github_Repo/CPLUS_QT_PROGRAMMING/src/qt_test/moc_predefs.h -I/home/cui/Qt5.11.2/5.11.2/gcc_64/mkspecs/linux-g++ -I/home/cui/Github_Repo/CPLUS_QT_PROGRAMMING/src/qt_test -I/usr/local/lib -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include/QtWidgets -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include/QtGui -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include form.h -o moc_form.cpp
+	/home/cui/Qt5.11.2/5.11.2/gcc_64/bin/moc $(DEFINES) --include /home/cui/Github_Repo/QT_OPENCV/basic_demos/qt_test/moc_predefs.h -I/home/cui/Qt5.11.2/5.11.2/gcc_64/mkspecs/linux-g++ -I/home/cui/Github_Repo/QT_OPENCV/basic_demos/qt_test -I/usr/local/include -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include/QtWidgets -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include/QtGui -I/home/cui/Qt5.11.2/5.11.2/gcc_64/include/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include form.h -o moc_form.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
